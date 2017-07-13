@@ -148,7 +148,51 @@
 <dl class="class">
 <dt id="avbr_gmapsstaticapi.staticMapImage">
 <em class="property">class </em><code class="descclassname">avbr_gmapsstaticapi.</code><code class="descname">staticMapImage</code><span class="sig-paren">(</span><em>point</em>, <em>zoom=10</em>, <em>mapHeight=640</em>, <em>mapWidth=640</em>, <em>gmapskey=None</em><span class="sig-paren">)</span><a class="headerlink" href="#avbr_gmapsstaticapi.staticMapImage" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Get directions between locations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>origin</strong> – Origin location - string address; (latitude, longitude)
+two-tuple, dict with (“lat”, “lon”) keys or object with (lat, lon)
+attributes</li>
+<li><strong>destination</strong> – Destination location - type same as origin</li>
+<li><strong>mode</strong> – Travel mode as string, defaults to “driving”.
+See <a class="reference external" href="https://developers.google.com/maps/documentation/directions/#TravelModes">google docs details</a></li>
+<li><strong>alternatives</strong> – True if provide it has to return more then one
+route alternative</li>
+<li><strong>waypoints</strong> – <p>Iterable with set of intermediate stops,
+like (“Munich”, “Dallas”)
+See <a class="reference external" href="https://developers.google.com/maps/documentation/javascript/reference#DirectionsRequest">google docs details</a></p>
+</li>
+<li><strong>optimize_waypoints</strong> – <p>if true will attempt to re-order supplied
+waypoints to minimize overall cost of the route. If waypoints are
+optimized, the route returned will show the optimized order under
+“waypoint_order”. See <a class="reference external" href="https://developers.google.com/maps/documentation/javascript/reference#DirectionsRequest">google docs details</a></p>
+</li>
+<li><strong>avoid</strong> – <p>Iterable with set of restrictions,
+like (“tolls”, “highways”). For full list refer to
+<a class="reference external" href="https://developers.google.com/maps/documentation/directions/#Restrictions">google docs details</a></p>
+</li>
+<li><strong>language</strong> – The language in which to return results.
+See <a class="reference external" href="https://developers.google.com/maps/faq#languagesupport">list of supported languages</a></li>
+<li><strong>units</strong> – <p>Unit system for result. Defaults to unit system of
+origin’s country.
+See <a class="reference external" href="https://developers.google.com/maps/documentation/directions/#UnitSystems">google docs details</a></p>
+</li>
+<li><strong>region</strong> – The region code. Affects geocoding of origin and
+destination (see <cite>gmaps.Geocoding.geocode</cite> region parameter)</li>
+<li><strong>departure_time</strong> – Desired time of departure as
+seconds since midnight, January 1, 1970 UTC</li>
+<li><strong>arrival_time</strong> – Desired time of arrival for transit directions as
+seconds since midnight, January 1, 1970 UTC.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </div>
 </div>

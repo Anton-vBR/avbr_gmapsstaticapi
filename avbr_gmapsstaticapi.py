@@ -22,6 +22,38 @@ class Point :
         self.lng = ln
 
 class staticMapImage:
+    """Get directions between locations
+
+        :param origin: Origin location - string address; (latitude, longitude)
+            two-tuple, dict with ("lat", "lon") keys or object with (lat, lon)
+            attributes
+        :param destination: Destination location - type same as origin
+        :param mode: Travel mode as string, defaults to "driving".
+            See `google docs details <https://developers.google.com/maps/documentation/directions/#TravelModes>`_
+        :param alternatives: True if provide it has to return more then one
+            route alternative
+        :param waypoints: Iterable with set of intermediate stops,
+            like ("Munich", "Dallas")
+            See `google docs details <https://developers.google.com/maps/documentation/javascript/reference#DirectionsRequest>`_
+        :param optimize_waypoints: if true will attempt to re-order supplied
+            waypoints to minimize overall cost of the route. If waypoints are
+            optimized, the route returned will show the optimized order under
+            "waypoint_order". See `google docs details <https://developers.google.com/maps/documentation/javascript/reference#DirectionsRequest>`_
+        :param avoid: Iterable with set of restrictions,
+            like ("tolls", "highways"). For full list refer to
+            `google docs details <https://developers.google.com/maps/documentation/directions/#Restrictions>`_
+        :param language: The language in which to return results.
+            See `list of supported languages <https://developers.google.com/maps/faq#languagesupport>`_
+        :param units: Unit system for result. Defaults to unit system of
+            origin's country.
+            See `google docs details <https://developers.google.com/maps/documentation/directions/#UnitSystems>`_
+        :param region: The region code. Affects geocoding of origin and
+            destination (see `gmaps.Geocoding.geocode` region parameter)
+        :param departure_time: Desired time of departure as
+            seconds since midnight, January 1, 1970 UTC
+        :param arrival_time: Desired time of arrival for transit directions as
+            seconds since midnight, January 1, 1970 UTC.
+        """
     
     def __init__(self, point, zoom = 10, mapHeight = 640, mapWidth = 640, gmapskey = None):
         
