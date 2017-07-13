@@ -55,7 +55,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'avbr_docx'
+project = 'avbr_gmapsstaticapi'
 copyright = '2017, Anton van Berlekom Ravandoni'
 author = 'Anton van Berlekom Ravandoni'
 
