@@ -17,9 +17,9 @@ from PIL import Image, ImageDraw, ImageFont
 from urllib import request
 
 class Point :
-    def __init__(self,lt,ln):
-        self.lat = lt
-        self.lng = ln
+    def __init__(self,latlng):
+        self.lat = latlng[0]
+        self.lng = latlng[1]
 
 class staticMapImage:
     """Get directions between locations
