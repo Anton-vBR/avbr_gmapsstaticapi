@@ -94,17 +94,23 @@ class staticMapImage:
             self.gmapskey)
     
     def getImg(self):
-        buffer = io.BytesIO(request.urlopen(self.url).read())
-        return buffer
+        buffer_ = io.BytesIO(request.urlopen(self.url).read())
+        return buffer_
     
-    def openImg(self, markers = []):
+    def openImg(self, texts = [], markers = []):
         img = Image.open(self.img).convert("RGB") # Open image in RGB
         draw = ImageDraw.Draw(img, 'RGBA') # Create a draw object
         
-        x=10
+        # Add text to map ()
+        for item in texts:
+        	if len(item) > 2:
+				draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", item[2]),fill="#000000")
+			else:
+				draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", 16),fill="#000000")
+
         # Add markers to map (circles)
+        x=10
         for marker in markers:
-            
             point = Point(marker[0],marker[1])
             XY = self.getPosition(point)
             if XY != "Either Lat or Lng outside bbox":
