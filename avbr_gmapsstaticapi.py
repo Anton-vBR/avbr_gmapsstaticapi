@@ -13,7 +13,7 @@
 import os
 import math
 import io
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 from urllib import request
 
 class Point :
