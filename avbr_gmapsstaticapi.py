@@ -101,15 +101,15 @@ class staticMapImage:
         img = Image.open(self.img).convert("RGB") # Open image in RGB
         draw = ImageDraw.Draw(img, 'RGBA') # Create a draw object
         
-        # Add text to map ()
+        # Add text to map
         for item in texts:
             if len(item) > 2:
-                draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", item[2]),fill="#000000")
+                size = item[2]
             else:
-                draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", 16),fill="#000000")
+                size = 16
+            draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", size),fill="#000000")
 
         # Add markers to map (circles)
-        x=10
         for marker in markers:
             point = Point(marker[0],marker[1])
             XY = self.getPosition(point)
@@ -117,9 +117,12 @@ class staticMapImage:
                 a = XY[0]
                 b = XY[1]
                 if len(marker) > 2:
-                    draw.ellipse((a-x,b-x,a+x,b+x), fill=marker[2], outline=(0,0,0))
+                    size = marker[2]
+                    fill = marker[3]
                 else:
-                    draw.ellipse((a-x,b-x,a+x,b+x), fill=(100,100,100,100), outline=(0,0,0))
+                    size = 10 
+                    fill = (100,100,100,100) # grey
+                draw.ellipse((a-size,b-size,a+size,b+size), fill=fill, outline=(0,0,0))
                  
         del draw # delete draw object
         return img
