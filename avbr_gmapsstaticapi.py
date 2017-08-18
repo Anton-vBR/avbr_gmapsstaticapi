@@ -103,10 +103,10 @@ class staticMapImage:
         
         # Add text to map ()
         for item in texts:
-        	if len(item) > 2:
-				draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", item[2]),fill="#000000")
-			else:
-				draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", 16),fill="#000000")
+            if len(item) > 2:
+                draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", item[2]),fill="#000000")
+            else:
+                draw.text(item[0], item[1],font=ImageFont.truetype("arial.ttf", 16),fill="#000000")
 
         # Add markers to map (circles)
         x=10
