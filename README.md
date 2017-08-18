@@ -7,19 +7,19 @@ Sample usage:
 ```py
 from avbr_gmapsstaticapi import Point, staticMapImage
 
-pos = Point(40.7473,-73.9875)
-mymap = staticMapImage(pos, zoom = 14, mapWidth = 640, mapHeight=640, gmapskey="#Yourkey")
-
 markers = [
     (40.74738701268981, -73.98759841918945),
     (40.76559148640381, -73.97884368896484),
     (40.72098167171645,-73.99755477905273)
     ]
 
-print(mymap.limens)
-print(mymap.getPosition(markers[0]))
+pos = Point(markers[0])
+mymap = staticMapImage(pos, zoom = 14, mapWidth = 640, mapHeight=640, gmapskey="#Yourkey")
 
-img = mymap.openImg(markers)
+print(mymap.limens)
+print(mymap.getPosition(Point(markers[0])))
+
+img = mymap.openImg()
 img.show()
 
 ```
