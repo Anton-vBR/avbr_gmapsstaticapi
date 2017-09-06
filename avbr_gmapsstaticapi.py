@@ -111,7 +111,7 @@ class staticMapImage:
 
         # Add markers to map (circles)
         for marker in markers:
-            point = Point(marker[0],marker[1])
+            point = Point((marker[0],marker[1]))
             XY = self.getPosition(point)
             if XY != "Either Lat or Lng outside bbox":
                 a = XY[0]
