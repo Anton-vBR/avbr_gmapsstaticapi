@@ -26,17 +26,18 @@ print(mymap.limens)
 Get position of marker 1:
 ```
 print(mymap.getPosition(Point(markers[0])))
-
 ```
 
 Create map with markers:
 ```
 img = mymap.openImg(markers=markers)
 img.show()
-
 ```
 
-   [Static Maps API]: <https://developers.google.com/maps/documentation/static-maps/>
+### Docs
+
+http://avbr-gmapsstaticapi.readthedocs.io/en/latest/overview.html
+
 
 ### Installation
 
@@ -58,3 +59,6 @@ License
 MIT
 
 **Free Software, Hell Yeah!**
+
+
+[Static Maps API]: <https://developers.google.com/maps/documentation/static-maps/>
