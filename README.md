@@ -15,11 +15,23 @@ markers = [
 
 pos = Point(markers[0])
 mymap = staticMapImage(pos, zoom = 14, mapWidth = 640, mapHeight=640, gmapskey="#Yourkey")
+```
 
+Extract limens:
+
+```
 print(mymap.limens)
+```
+
+Get position of marker 1:
+```
 print(mymap.getPosition(Point(markers[0])))
 
-img = mymap.openImg()
+```
+
+Create map with markers:
+```
+img = mymap.openImg(markers=markers)
 img.show()
 
 ```
@@ -28,12 +40,10 @@ img.show()
 
 ### Installation
 
-This module requires PILLOW library. "pip install pillow"
-Install the module by running "pip install ." in terminal/cmd.
+To get the latest version, simply do:
 
 ```
-cd directoryofpackage
-pip install .
+pip install https://github.com/Anton-vBR/avbr_gmapsstaticapi/archive/master.zip --upgrade
 ```
 
 
